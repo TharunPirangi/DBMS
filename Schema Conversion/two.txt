@@ -1,0 +1,27 @@
+Student(StdNo,StdName,StdCity,StdState,StdZip,StdEmail)
+Primary Key :- StdNo
+
+Institution(InstID,InstName,InstMascot)
+Primary Key :- InstID
+
+Lender(LenderNo,LendName)
+Primary Key :- LenderNo
+
+Loan(LoanNo,StdNo,InstID,LenderNo,ProcDate,DisbMethod,DisbBank,DateAuth,NoteValue,Subsidized,Rate)
+Primary Key :- LoanNo
+---->
+foreign key(StdNo) references Student
+foreign key(InstID) references Institution
+foreign key(LenderNo) references Lender
+StdNo NOT NULL
+InstID NOT NULL
+LenderNo NOT NULL
+
+DisbuseLine(LoanNo,DateSent,Amount,OrigFee,GuarFee)
+Primary Key :- DateSent
+foreign key(LoanNo) references Loan
+
+Conversion rules..
+-------------------------
+Use the entity type rule to convert each entity type.
+Use the 1-M relationship rule for all relationships.

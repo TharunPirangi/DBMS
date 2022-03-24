@@ -1,0 +1,15 @@
+Student(StdNo,StdName,StdCity,StdState,StdZip,StdEmail)
+PK :- StdNo
+
+Institution(InstID,InstName,InstMascot)
+PK :- InstID
+
+Lender(LenderNo,LendName)
+PK :- LenderNo
+
+Loan(LoanNo,ProcDate,DisbMethod,DisbBank,DateAuth,NoteValue,Subsidized,Rate)
+PK :- LoanNo
+
+DisbuseLine(DateSent,Amount,OrigFee,GuarFee)
+PK :- DateSent
+
